@@ -1,7 +1,9 @@
 # General information, describing your project (i.e., the abstract)
-This study analyses the number of English and non-English books added to the Project Gutenberg Catalog before and after the year 2010. 
+This study analyses the number of English and non-English books added to the Project Gutenberg Catalog before and after the year 2010. It does this using the Project Gutenberg Catalog Metadata, from which the date of being indexed by Project Gutenberg and the document language are extracted, which are then counted and analysed. 
+
 # Background information (list at least two studies that have looked at your topic, including correct referencing)
-Gerlach, M., & Font-Clos, F. (2020). discusses the creation of a curated Project Gutenberg database. In their article they show the language distribution of this database. showing clear bias in favour of western languages, with English being the most common language by far, at 81% of all books.
+Gerlach, M., & Font-Clos, F. (2020). discusses the creation of a curated Project Gutenberg database. In their article they show the language distribution of this database. showing clear bias in favour of western languages, with English being the most common language by far, at 81% of all books. 
+
 # Research question and hypotheses
 ## Research Question
 What is the difference in the proportion of English versus non-English books added to Project Gutenberg before and after 2010?
