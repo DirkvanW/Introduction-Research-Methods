@@ -13,9 +13,9 @@
 \usepackage{amsmath}
 \aclfinalcopy 
 
-\usepackage[authoryear]{natbib}
+\usepackage[]{biblatex}
 \usepackage{url}
-
+\addbibresource{mybib.bib}
 \title{Project Gutenberg language diversity over time}
 \author{Dirk van Wezel \\
 S4910583 \\}
@@ -30,11 +30,11 @@ S4910583 \\}
 
 
 \section{Introduction}
-This study analyses the linguistic diversity in Project Gutenberg's digital library collection over time,  examining changes in the additions for each language in the Gutenberg Collection per year. The research aims to understand how increased internet access in non-English speaking countries may have influenced digital preservation efforts.
+This study analyses the linguistic diversity in Project Gutenberg's digital library collection over time, examining changes in the additions for each language in the Gutenberg Collection per year. The research aims to understand how increased internet access in non-English speaking countries may have influenced digital preservation efforts. It does this by 
 \section{Related Work}
 Several studies have examined linguistic diversity in digital libraries and Project Gutenberg specifically:
 
-\cite{leb} explored multilingualism on the web and Project Gutenberg's early efforts at linguistic diversification, providing important historical context for understanding the evolution of digital preservation efforts.
+\autocite{whitt_diachronic_2018} explored multilingualism on the web and Project Gutenberg's early efforts at linguistic diversification, providing important historical context for understanding the evolution of digital preservation efforts.
 
 2. Gerlach, M., \& Font-Clos, F. (2020) analysed a curated Project Gutenberg database, revealing a strong bias toward Western languages, with English comprising 81\% of all books. Their work established baseline metrics for understanding linguistic representation in digital libraries.
 
@@ -49,8 +49,7 @@ We expect that the data will show an increase in the proportion of non-English b
 
 \section{Conclusion}
 
-\bibliographystyle{chicago}
-\bibliography{mybib.bib}
+\printbibliography
 
 \end{document}
 
