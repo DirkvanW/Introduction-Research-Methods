@@ -16,6 +16,8 @@
 \usepackage{booktabs}
 \usepackage{lscape}
 \usepackage{float}
+\usepackage{dblfloatfix}
+\usepackage{wrapfig}
 \aclfinalcopy 
 
 \usepackage[style=authoryear]{biblatex}
@@ -50,11 +52,24 @@ Project Gutenberg also knows about the disparity in languages in it's collection
 The data pre-processing was done by downloading the metadata of all Project Gutenberg books from the gutenberg.org website on 06-01-2025. This data can be downloaded in the form of a CSV file, which contains the relevant fields for this article: the date added and the language. 
 Books that included multiple languages, either due to being a translation that includes the original text or being a translation dictionary, are counted for both languages. The python script used for extracting the data will be included with the paper. Due to not being completed, and thus giving incomplete information, the year 2025 was excluded. 
 As only the language codes were given with the metadata, language codes were manually linked to their respective language. 
-This resulted in a matrix for book additions per year for every language, from the years 1971 to 2024, with 70 languages, shown in table \ref{tab:language_table} in the Appendix, with the total books per language shown in figure \ref{tab:books_per_language}, also in the appendix. The the non-English books were all summed, creating the distribution shown in figure \ref{fig:booksaddedchart}. 
-\begin{figure}
+This resulted in a matrix for book additions per year for every language, from the years 1971 to 2024, with 70 languages. The the non-English books were all summed, creating the distribution graph shown in figure \ref{fig:booksaddedchart}. Books added per decade are shown in table \ref{tab:books_added_per_decade}. The complete data matrix is shown in table \ref{tab:language_table} in the Appendix, with the total books per language shown in figure \ref{tab:books_per_language}, also in the appendix.
+\begin{table}[]
+    \resizebox{\textwidth}{!}{%
+    \begin{tabular}{@{}lllllll@{}}
+    \toprule
+    Language & 1970-1980 & 1881-1990 & 1991-2000 & 2001-2010 & 2011-2020 & 2021-2024 \\ \midrule
+    English  & 9         & 1         & 1861      & 27375     & 22767     & 7970      \\
+    Other    & 0         & 0         & 79        & 5526      & 6703      & 2759      \\ \bottomrule
+    \end{tabular}%
+    }
+    \caption{Books added to Project Gutenberg per decade}
+    \label{tab:books_added_per_decade}
+    \end{table}
+ 
+\begin{figure}[]
 \begin{tikzpicture}
     \begin{axis}[
-        width=15cm,
+        width=\columnwidth,
         height=8cm,
         grid=major,
         xlabel={Year},
@@ -98,9 +113,8 @@ This resulted in a matrix for book additions per year for every language, from t
     \caption{Number of books added to Project Gutenberg per year for English and non-English languages}
     \label{fig:booksaddedchart}
 \end{figure}
-    
-\section{Predicted Results}
-We expect that the data will show an increase in the proportion of non-English books in Project Gutenberg's collection over time. This is based on the idea that increased internet access in non-English speaking countries leads to greater easier access and participation with Project Gutenberg. Additionally, we anticipate that the diversity of languages represented will have broadened, reflecting a more globalized effort in digital preservation.
+\section{Results}
+As seen in figure \ref{fig:booksaddedchart}, the proportion of English of non-English books does change, especially after the peak and consequent collapse of English books around 2004, with an unsteady decline after that point. non-English books 
 \paragraph{Discussion} 
 
 
