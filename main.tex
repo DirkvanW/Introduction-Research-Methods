@@ -15,6 +15,7 @@
 \usepackage{geometry}
 \usepackage{booktabs}
 \usepackage{lscape}
+\usepackage{float}
 \aclfinalcopy 
 
 \usepackage[style=authoryear]{biblatex}
@@ -34,7 +35,7 @@ S4910583 \\}
 
 
 \section{Introduction}
-This study analyses the linguistic diversity in Project Gutenberg's digital library collection over time, examining changes in the additions for each language in the Gutenberg Collection per year. The research aims to understand how increased internet access in non-English speaking countries may have influenced digital preservation efforts. It does this by analysing the works added year over year to the Gutenberg collection, showing the changes in addition rates of differing languages. 
+This study analyses the linguistic diversity in Project Gutenberg's digital library collection over time, examining changes in the additions for each language in the Gutenberg Collection per year. The research aims to understand how increased internet access in non-English speaking countries may have influenced digital preservation efforts. It does this by analysing the works added year over year to the Gutenberg collection, showing the changes in addition rates of differing languages. The hypothesis is that over time, the proportion of English books will decrease compared to non-English books, reflecting an increase in internet availability and interest in preservation of historical books, and a decrease in available public domain books written in English. On the frequently asked questions pages on the gutenberg.org website they explain how books are added, namely by volunteers. This makes it difficult for Project Gutenberg to directly change which books are added, as they can't dictate what these volunteers add.
 \section{Related Work}
 Several studies have examined linguistic diversity in digital libraries and Project Gutenberg specifically:
 \begin{enumerate}
@@ -47,7 +48,7 @@ Several studies have examined linguistic diversity in digital libraries and Proj
 The data pre-processing was done by downloading the metadata of all Project Gutenberg books from the gutenberg.org website on 06-01-2025. This data can be downloaded in the form of a CSV file, which contains the relevant fields for this article: the date added and the language. 
 Books that included multiple languages, either due to being a translation that includes the original text or being a translation dictionary, are counted for both languages. The python script used for extracting the data will be included with the paper. Due to not being completed, and thus giving incomplete information, the year 2025 was excluded. 
 As only the language codes were given with the metadata, language codes were manually linked to their respective language. 
-This resulted in a matrix for book additions per year for every language, from the years 1971 to 2024, with 70 languages. Trying to processis this data directly 
+This resulted in a matrix for book additions per year for every language, from the years 1971 to 2024, with 70 languages. Many of these languages have very few books however. For example, of the 70 languages 46 have less than 10 total books. This makes any analysis of including these languages less likely to be significant. 
 
 \section{Predicted Results}
 We expect that the data will show an increase in the proportion of non-English books in Project Gutenberg's collection over time. This is based on the idea that increased internet access in non-English speaking countries leads to greater easier access and participation with Project Gutenberg. Additionally, we anticipate that the diversity of languages represented will have broadened, reflecting a more globalized effort in digital preservation.
@@ -60,63 +61,69 @@ We expect that the data will show an increase in the proportion of non-English b
 \clearpage
 \section{Appendix}
 \subsection{Appendix A}
-\begin{tikzpicture}
-    \begin{axis}[
-        width=15cm,
-        height=25cm,
-        xbar,
-        xmin=0,
-        xmax=60000,
-        xlabel={Number of Books},
-        ylabel={Languages},
-        %bars=0.3cm,
-        nodes near coords,
-        nodes near coords align={horizontal},
-        every node near coord/.append style={font=\tiny},
-        ytick=data,
-        yticklabels={
-            Yiddish,Welsh,Tibetan,Telugu,Tagalog,Tagabawa,Swedish,Spanish,
-            Slovenian,Serbian,Scots,Sanskrit,Russian,Romanian,Portuguese,Polish,
-            Old English,Ojibwa,Occitan,Norwegian,North American Indian,Navajo,
-            Napoletano-Calabrese,Nahuatl,Middle English,Mayan Languages,Maori,
-            Lithuanian,Latin,Korean,Khasi,Kashubian,Japanese,Italian,Irish,
-            Inuktitut,Interlingua,Iloko,Icelandic,Hungarian,Hebrew,Haida,
-            Greek;Ancient,Greek,German,Gamilaraay,Galician,Gaelic;Scottish,
-            Friulian,Frisian,French,Finnish,Farsi,Estonian,Esperanto,English,
-            Dutch,Danish,Czech,Chinese,Cebuano,Catalan,Caló,Bulgarian,Breton,
-            Bodo,Arapaho,Arabic,Aleut,Afrikaans
-        },
-        ytick style={draw=none},
-        yticklabel style={font=\tiny},
-        enlarge y limits=0.02,
-        visualization depends on=y \as \y,
-        nodes near coords style={
-            /pgf/number format/fixed,
-            /pgf/number format/precision=0,
-            shift={(axis direction cs:0.5,0)},
-            anchor=west,
-            check for zero/.code={
-                \ifnum\y=0
-                    \pgfkeys{/tikz/coordinate}
-                \fi
+\begin{figure}[h!]
+    \centering
+    \begin{tikzpicture}
+        \begin{axis}[
+            width=15cm,
+            height=18.1cm,
+            xbar,
+            xmin=0,
+            xmax=60000,
+            xlabel={Number of Books},
+            ylabel={Languages},
+            bar width=0.1cm,
+            nodes near coords,
+            nodes near coords align={horizontal},
+            every node near coord/.append style={font=\tiny},
+            ytick=data,
+            yticklabels={
+                Yiddish,Welsh,Tibetan,Telugu,Tagalog,Tagabawa,Swedish,Spanish,
+                Slovenian,Serbian,Scots,Sanskrit,Russian,Romanian,Portuguese,Polish,
+                Old English,Ojibwa,Occitan,Norwegian,North American Indian,Navajo,
+                Napoletano-Calabrese,Nahuatl,Middle English,Mayan Languages,Maori,
+                Lithuanian,Latin,Korean,Khasi,Kashubian,Japanese,Italian,Irish,
+                Inuktitut,Interlingua,Iloko,Icelandic,Hungarian,Hebrew,Haida,
+                Greek;Ancient,Greek,German,Gamilaraay,Galician,Gaelic;Scottish,
+                Friulian,Frisian,French,Finnish,Farsi,Estonian,Esperanto,English,
+                Dutch,Danish,Czech,Chinese,Cebuano,Catalan,Caló,Bulgarian,Breton,
+                Bodo,Arapaho,Arabic,Aleut,Afrikaans
+            },
+            ytick style={draw=none},
+            yticklabel style={font=\tiny},
+            enlarge y limits=0.01,
+            visualization depends on=y \as \y,
+            nodes near coords style={
+                /pgf/number format/fixed,
+                /pgf/number format/precision=0,
+                shift={(axis direction cs:0.5,0)},
+                anchor=west,
+                check for zero/.code={
+                    \ifnum\y=0
+                        \pgfkeys{/tikz/coordinate}
+                    \fi
+                }
             }
-        }
-    ]
-    \addplot[fill=blue!40] coordinates {
-        (1,0) (15,1) (1,2) (6,3) (60,4) (1,5) (236,6) (870,7)
-        (3,8) (4,9) (1,10) (1,11) (9,12) (5,13) (644,14) (31,15)
-        (4,16) (1,17) (2,18) (21,19) (3,20) (3,21) (1,22) (3,23)
-        (6,24) (3,25) (2,26) (1,27) (145,28) (1,29) (1,30) (1,31)
-        (22,32) (1027,33) (3,34) (1,35) (1,36) (3,37) (7,38)
-        (558,39) (7,40) (1,41) (3,42) (221,43) (2243,44) (1,45)
-        (3,46) (2,47) (7,48) (16,49) (3906,50) (3154,51) (1,52)
-        (1,53) (141,54) (59983,55) (1029,56) (79,57) (12,58)
-        (444,59) (3,60) (56,61) (1,62) (6,63) (1,64) (2,65)
-        (2,66) (1,67) (1,68) (15,69)
-    };
-    \end{axis}
-    \end{tikzpicture}
-    \clearpage
+        ]
+        \addplot[fill=blue!40] coordinates {
+            (1,0) (15,1) (1,2) (6,3) (60,4) (1,5) (236,6) (870,7)
+            (3,8) (4,9) (1,10) (1,11) (9,12) (5,13) (644,14) (31,15)
+            (4,16) (1,17) (2,18) (21,19) (3,20) (3,21) (1,22) (3,23)
+            (6,24) (3,25) (2,26) (1,27) (145,28) (1,29) (1,30) (1,31)
+            (22,32) (1027,33) (3,34) (1,35) (1,36) (3,37) (7,38)
+            (558,39) (7,40) (1,41) (3,42) (221,43) (2243,44) (1,45)
+            (3,46) (2,47) (7,48) (16,49) (3906,50) (3154,51) (1,52)
+            (1,53) (141,54) (59983,55) (1029,56) (79,57) (12,58)
+            (444,59) (3,60) (56,61) (1,62) (6,63) (1,64) (2,65)
+            (2,66) (1,67) (1,68) (15,69)
+        };
+        \end{axis}
+        \end{tikzpicture}
+        \caption{Total books per language in the Gutenberg Corpus}
+        \label{tab:books_per_language}
+\end{figure}
+
+\clearpage
 \begin{landscape}
     \begin{table}[]
     \resizebox{\paperwidth}{!}{%
