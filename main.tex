@@ -54,19 +54,22 @@ Books that included multiple languages, either due to being a translation that i
 As only the language codes were given with the metadata, language codes were manually linked to their respective language. 
 This resulted in a matrix for book additions per year for every language, from the years 1971 to 2024, with 70 languages. The the non-English books were all summed, creating the distribution graph shown in figure \ref{fig:booksaddedchart}. Books added per decade are shown in table \ref{tab:books_added_per_decade}. The complete data matrix is shown in table \ref{tab:language_table} in the Appendix, with the total books per language shown in figure \ref{tab:books_per_language}, also in the appendix.
 \begin{table}[]
-    \resizebox{\textwidth}{!}{%
-    \begin{tabular}{@{}lllllll@{}}
+    \resizebox{\columnwidth}{!}{%
+    \begin{tabular}{@{}lll@{}}
     \toprule
-    Language & 1970-1980 & 1881-1990 & 1991-2000 & 2001-2010 & 2011-2020 & 2021-2024 \\ \midrule
-    English  & 9         & 1         & 1861      & 27375     & 22767     & 7970      \\
-    Other    & 0         & 0         & 79        & 5526      & 6703      & 2759      \\ \bottomrule
+    Ywe  & English & Other \\ \midrule
+    1970-1980 & 9       & 0     \\
+    1881-1990 & 1       & 0     \\
+    1991-2000 & 1861    & 79    \\
+    2001-2010 & 27375   & 5526  \\
+    2011-2020 & 22767   & 6703  \\
+    2021-2024 & 7970    & 2759  \\ \bottomrule
     \end{tabular}%
     }
     \caption{Books added to Project Gutenberg per decade}
     \label{tab:books_added_per_decade}
-    \end{table}
- 
-\begin{figure}[]
+\end{table}
+\begin{figure}[h]
 \begin{tikzpicture}
     \begin{axis}[
         width=\columnwidth,
@@ -113,10 +116,11 @@ This resulted in a matrix for book additions per year for every language, from t
     \caption{Number of books added to Project Gutenberg per year for English and non-English languages}
     \label{fig:booksaddedchart}
 \end{figure}
-\section{Results}
-As seen in figure \ref{fig:booksaddedchart}, the proportion of English of non-English books does change, especially after the peak and consequent collapse of English books around 2004, with an unsteady decline after that point. non-English books 
-\paragraph{Discussion} 
+\section{Predicted Results}
+As seen in figure \ref{fig:booksaddedchart}, the proportion of English to non-English books has significantly changed over time, particularly after the large increase in books added in 2004. But while English books experienced a sharp decline after this peak of over 6,000 additions, non-English books maintained a relatively stable addition rate of 600-800 books per year following 2004. Furthermore, English book additions have begun to steadily decline after the 2004, if inconsistently. If this pattern continues, the gap between English and non-English book addition rates will likely become narrower in the future.
 
+\paragraph{Discussion} 
+The trend shown in the data strongly supports the hypothesis that the proportion of English books would decrease compared to non-English books. The decline in English book additions could be attributed to the the fact that most English public domain books have already been entered, with remaining books becoming increasingly rare. The stability in non-English additions suggests growing international attention for digital preservation efforts. This could be due to several factors: increased global internet accessibility, greater awareness of Project Gutenberg internationally, and improved or more accesible optical character recognition (OCR) technology for non-Latin scripts, making it easier to participate. Additionally, as many English book have already been digitized, volunteers might be increasingly focussing on preserving texts in other languages.
 
 \section{Conclusion}
 
