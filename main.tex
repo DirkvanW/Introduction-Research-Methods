@@ -20,7 +20,7 @@
 \usepackage{wrapfig}
 \aclfinalcopy 
 
-\usepackage[style=authoryear]{biblatex}
+\usepackage[style=authoryear, backend=biber]{biblatex}
 \usepackage{url}
 \addbibresource{mybib.bib}
 \title{Project Gutenberg language diversity over time}
@@ -32,18 +32,24 @@ S4910583 \\}
 \maketitle
 
 \begin{abstract}
-
+This article analyses the linguistic diversity in Project Gutenberg's digital library collection over time by analyzing books added to the Gutenberg collection over time. The data was pre-processed by downloading the metadata of all Project Gutenberg books from the gutenberg.org website on 06-01-2025. The results show that the proportion of English books haven been decreasing over time, while non-English books have maintained a relatively stable addition rate after an initial quick rise in 2004. 
 \end{abstract}
 
 
 \section{Introduction}
 This study analyses the linguistic diversity in Project Gutenberg's digital library collection over time, examining changes in both English and non-English books added to the Gutenberg Collection per year. It aims to answer what the difference is in the proportion of languages added to Project Gutenberg over time. This research analyses the works added year over year to the Gutenberg collection, showing the changes in addition rates of differing languages. The hypothesis is that over time, the proportion of English books will decrease compared to non-English books, reflecting an increase in internet availability and interest in preservation of historical books, and a decrease in available public domain books written in English. 
 \section{Related Work}
+
 Several studies have examined linguistic diversity in digital libraries and Project Gutenberg specifically:
 \begin{enumerate}
     \item \textcite{whitt_diachronic_2018} explored multilingualism on the web and Project Gutenberg's early efforts at linguistic diversification, providing important historical context for understanding the evolution of digital preservation efforts.
     \item \textcite{gerlach_standardized_2020} analysed a curated Project Gutenberg database, revealing a strong bias toward Western languages, with English comprising 81\% of all books. Their work established baseline metrics for understanding linguistic representation in digital libraries.
+    \item \textcite{budziseweaver_collaboration_2012} explores 
 \end{enumerate}
+
+\textcite{wu_exploration_2023} 
+
+\textcite{pallot_collaborative_2010} disusses a model for collaborative work, and the factors that influence the efficiency of the collaborative work. Several of these factors could have influenced the additions of books to Project Gutenberg. For example the Organisational and Spatial structural distance types or the Temporal, Relational and Lingual social distance types. These factors could have influenced the addition of books to Project Gutenberg, as the volunteers that add books to Project Gutenberg are not directly managed by Project Gutenberg, and as such communication between Project Gutenberg and the volunteers could be difficult.
 
 Project Gutenberg also knows about the disparity in languages in it's collection. For example, on the frequently asked questions pages on the gutenberg.org website they explain how books are added, namely by volunteers. This makes it difficult for Project Gutenberg to directly change which books are added, as they can't dictate what these volunteers add.
 
@@ -123,7 +129,10 @@ As seen in figure \ref{fig:booksaddedchart}, the proportion of English to non-En
 The trend shown in the data strongly supports the hypothesis that the proportion of English books would decrease compared to non-English books. The decline in English book additions could be attributed to the the fact that most English public domain books have already been entered, with remaining books becoming increasingly rare. The stability in non-English additions suggests growing international attention for digital preservation efforts. This could be due to several factors: increased global internet accessibility, greater awareness of Project Gutenberg internationally, and improved or more accesible optical character recognition (OCR) technology for non-Latin scripts, making it easier to participate. Additionally, as many English book have already been digitized, volunteers might be increasingly focussing on preserving texts in other languages.
 
 \section{Conclusion}
-
+This study has demonstrated a clear shift in the linguistic composition of Project Gutenberg's digital library collection over time. It reveals that while English-language content has been dominating additions to the collection, there has been a gradual but consistent decline in the rate of English book additions. On the other hand, non-English books have maintained relatively stable addition rates per year since 2004, suggesting a more sustainable and diverse growth pattern.
+The findings support the initial hypothesis that the proportion of English books would decrease relative to non-English books over time. This trend can be attributed to several factors, including the running out of available English public domain books, increased global participation in digital preservation efforts, and technological advancements in handling non-Latin scripts.
+These results have important implications for the future of digital libraries and preservation efforts. As Project Gutenberg continues to evolve, the data suggests a natural progression toward a more linguistically diverse collection, better representing the global literary heritage. 
+Future research could explore the specific causes of the decline in English book additions, reason for the peak in 2004, and the factors driving the consistent addition of non-English books. 
 \printbibliography
 \clearpage
 \section{Appendix} \label{Appendix}
