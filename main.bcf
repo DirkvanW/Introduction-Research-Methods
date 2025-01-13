@@ -2376,8 +2376,7 @@
     <bcf:citekey order="1" intorder="1">whitt_diachronic_2018</bcf:citekey>
     <bcf:citekey order="2" intorder="1">gerlach_standardized_2020</bcf:citekey>
     <bcf:citekey order="3" intorder="1">budziseweaver_collaboration_2012</bcf:citekey>
-    <bcf:citekey order="4" intorder="1">wu_exploration_2023</bcf:citekey>
-    <bcf:citekey order="5" intorder="1">pallot_collaborative_2010</bcf:citekey>
+    <bcf:citekey order="4" intorder="1">pallot_collaborative_2010</bcf:citekey>
   </bcf:section>
   <!-- SORTING TEMPLATES -->
   <bcf:sortingtemplate name="nyt">
